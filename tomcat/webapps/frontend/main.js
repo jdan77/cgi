@@ -136,7 +136,7 @@ function addCard() {
             location.reload();
         };
     } else {
-        alert("Image need to be smaller than 10kB");
+        alert("Image need to be smaller than 10KB");
     }
 
 /*

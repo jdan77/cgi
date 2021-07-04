@@ -1,16 +1,24 @@
+import java.util.UUID;
+
 public class BusinessCard {
-     private String name;
-     private String surName;
-     private String telephone;
-     private String email;
-     private String image;
+    private String id;          //only getter
+    private String name;
+    private String surName;
+    private String telephone;
+    private String email;
+    private String image;
 
     public BusinessCard(String name, String surName, String telephone, String email, String image) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.surName = surName;
         this.telephone = telephone;
         this.email = email;
         this.image = image;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {

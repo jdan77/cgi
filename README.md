@@ -10,7 +10,7 @@ Ingen förändring är gjort i standardkonfigurationen
 
 ## Kopiera mina webapps färdigkompilerade
 Kopiera 2st webapps från mitt git repository  
-tomcat\webapps\backend
+tomcat\webapps\backend  
 tomcat\webapps\frontend
 
 ## Kompilera mina webapps

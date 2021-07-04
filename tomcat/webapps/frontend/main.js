@@ -46,11 +46,6 @@ function processList() {
             let divDN = document.createElement('div');
             divDN.className = 'displayname';
 
-            let image = document.createElement('input');
-            image.id = id + '_image';
-            image.type = 'hidden';
-            image.value = jsonResponse[i].image;
-
             let name = document.createElement('input');
             name.id = id + '_name';
             name.type = 'text';
@@ -98,7 +93,6 @@ function processList() {
             p.appendChild(div);
             div.appendChild(img);
             div.appendChild(divDN);
-            divDN.appendChild(image);
             divDN.appendChild(name);
             divDN.appendChild(surName);
             div.appendChild(telephone);

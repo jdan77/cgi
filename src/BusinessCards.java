@@ -11,8 +11,6 @@ public class BusinessCards {
 
     private BusinessCards() {
         this.cards = new ArrayList<BusinessCard>();
-        cards.add(new BusinessCard("Jörgen", "Danielsson", "0701111111", "joda@joda.nu", "ER3232222222222222222222222"));
-        cards.add(new BusinessCard("Test", "Testsson", "1111111111", "Test@te.st", "ER3232222222222222222222222"));
     }
 
     public void addCard(BusinessCard bc){

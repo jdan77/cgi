@@ -114,27 +114,30 @@ function delCard(buttonId) {
 }
 
 function addCard() {
+    let name = document.getElementById('name').value;
+    let surName = document.getElementById('surName').value;
+    let telephone = document.getElementById('telephone').value;
+    let email = document.getElementById('email').value;
     let fileInput = document.getElementById('image');
 
-    if (fileInput.files[0].size / 1024 < 10) {
-        let reader = new FileReader();
-        reader.readAsDataURL(fileInput.files[0]);
-        reader.onload = function () {
-            let name = document.getElementById('name').value;
-            let surName = document.getElementById('surName').value;
-            let telephone = document.getElementById('telephone').value;
-            let email = document.getElementById('email').value;
-            let query = '&name=' + name + '&surName=' + surName + '&telephone=' + telephone + '&email=' + email + '&image=' + reader.result;
-            xhr.open('POST', 'http://localhost:8080/backend/BusinessCards/?' + query );
-            xhr.send();
-            location.reload();
-        };
+    if (name == "" || surName == "" || telephone == "" || email == "" || !fileInput.files[0]) {
+        alert("All fields are required");
     } else {
-        alert("Image need to be smaller than 10KB");
-    }
+        if (fileInput.files[0].size / 1024 < 10) {
+            let reader = new FileReader();
+            reader.readAsDataURL(fileInput.files[0]);
+            reader.onload = function () {
 
-/*
-*/
+                let query = '&name=' + name + '&surName=' + surName + '&telephone=' + telephone + '&email=' + email + '&image=' + reader.result;
+                xhr.open('POST', 'http://localhost:8080/backend/BusinessCards/?' + query );
+                xhr.send();
+                location.reload();
+            };
+        } else {
+            alert("Image need to be smaller than 10KB");
+        }
+
+    }
 }
 
 function updateCard(buttonId) {

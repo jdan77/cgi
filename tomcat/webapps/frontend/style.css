@@ -1,0 +1,22 @@
+.businesscard {
+    width: 88.9mm;
+    height: 50.8mm;
+    border-style: groove;
+
+}
+
+.displayname {
+    display: inline block
+}
+
+.bcImage {
+    width: 100px;
+    height: 100px;
+
+}
+
+.textInput {
+    border: none;
+    background: transparent;
+    outline: none
+}

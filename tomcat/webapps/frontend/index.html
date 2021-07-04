@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head><title>Test</title></head>
+  <head>
+    <title>Business cards</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="main.js"></script>
+  </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div id ="add">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br>
+      <label for="surName">Surname:</label>
+      <input type="text" id="surName" name="surName"><br>
+      <label for="telephone">Telephone:</label>
+      <input type="email" id="telephone" name="telephone"><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br>
+      <label for="image">Image (Base64):</label>
+      <input type="file" id="image" name="image" accept="image/*"><br>
+      <button onclick="addCard()">Add</button>
+    </div>
+
+    <div id="list"></div>
   </body>
 </html>

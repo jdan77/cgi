@@ -6,10 +6,10 @@ tomcat\bin\startup.bat
 
 ## Hämta tomcat från källan
 För att manuellt installera så hämtas samma version från https://tomcat.apache.org/download-10.cgi  
-Ingen förändring är gjort i standardkonfigurationen
+Ingen förändring är gjord i standardkonfigurationen
 
 ## Kopiera mina webapps färdigkompilerade
-Kopiera 2st webapps från mitt git repository  
+Kopiera 2st webapps från mitt git repository till egen tomcat installation  
 tomcat\webapps\backend  
 tomcat\webapps\frontend
 
@@ -21,7 +21,7 @@ javac BusinessCard.java
 javac BusinessCards.java  
 javac -cp .;"<path_to_tomcat>\tomcat\lib\*" BusinessCardRest.java  
   
-Lägg skapade class filer i tomcat\webapps\backend  
+Lägg skapade class filer i tomcat\webapps\backend\WEB-INF\classes   
   
 Katalogen tomcat\webapps\frontend innehåller bara index.html, main.js, style.css som bara behöver kopieras från mitt repository  
 

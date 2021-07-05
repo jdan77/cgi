@@ -37,7 +37,7 @@ function processList() {
         var listLoc = document.getElementById('list')
 
         for (var i = 0; i < jsonResponse.length; i++) {
-            let id = jsonResponse[i].id
+            var id = jsonResponse[i].id
 
             let p = document.createElement('p');
             let div = document.createElement('div');
@@ -85,6 +85,7 @@ function processList() {
             }
 
             let img = new Image();
+            img.id = id + '_image';
             let imgBase64 = jsonResponse[i].image.replace(/\n|\r/g, "");
             img.src = imgBase64
             img.className = 'bcImage';
@@ -146,7 +147,7 @@ function updateCard(buttonId) {
     let surName = document.getElementById(id + "_surName").value;
     let telephone = document.getElementById(id + "_telephone").value;
     let email = document.getElementById(id + "_email").value;
-    let image = document.getElementById(id + "_image").value;
+    let image = document.getElementById(id + "_image").getAttribute("src");
     let query = 'id=' + id + '&name=' + name + '&surName=' + surName + '&telephone=' + telephone + '&email=' + email + '&image=' + image;
     xhr.open('PUT', 'http://localhost:8080/backend/BusinessCards/?' + query );
     xhr.send();

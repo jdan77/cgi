@@ -1,8 +1,12 @@
 # REST service
 
+## JAVA_HOME och jdk
+Systemvariablen JAVA_HOME måste finnas som pekar mot jdk installation  
+Jag har använt mig av OpenJDK 16.0.1 från https://docs.microsoft.com/en-us/java/openjdk/download  
+
 ## Enklaste sättet
 För att köra den här lösningen så används tomcat 10.0.7 (windows), enklast är att bara ladda ner tomcat katalogen och köra:  
-tomcat\bin\startup.bat
+tomcat\bin\startup.bat  
 
 ## Hämta tomcat från källan
 För att manuellt installera så hämtas samma version från https://tomcat.apache.org/download-10.cgi  

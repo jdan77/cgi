@@ -41,13 +41,16 @@ public class BusinessCardRest extends HttpServlet {
         } else
             output.println("{}");
 
-        output.close();  // Always close the output writer
+        output.close();
     }
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BusinessCards.getInstance().addCard(createCard(req));
+        BusinessCard bc = createCard(req);
+
+        if (bc != null)
+            BusinessCards.getInstance().addCard(bc);
     }
 
     @Override
@@ -61,7 +64,8 @@ public class BusinessCardRest extends HttpServlet {
         String id = req.getParameter("id");
         BusinessCard bc = createCard(req);
 
-        BusinessCards.getInstance().updateCard(id, bc);
+        if (bc != null)
+            BusinessCards.getInstance().updateCard(id, bc);
     }
 
 
@@ -71,6 +75,9 @@ public class BusinessCardRest extends HttpServlet {
         String telephone = req.getParameter("telephone");
         String email  = req.getParameter("email");
         String image = req.getParameter("image");
+
+        if (name.length() == 0 || surName.length() == 0 || telephone.length() == 0 || email.length() == 0 || image.length() == 0 )
+            return null;
 
         return new BusinessCard(name, surName, telephone, email, image);
     }
